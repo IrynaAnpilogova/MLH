@@ -3,9 +3,15 @@
   "name": "#name",
   "gender": ".ant-radio",
   "age": "#age",
-  "story": ".ant-select-selector",
+  "ageSpinnerDown":".ant-input-number-handler-down",
+  "ageSpinnerUp":".ant-input-number-handler-up",
+  "story": ".ant-select-selection-placeholder",
   "create": ".ant-btn",
   "storyClick": ".ant-select-show-arrow",
-  "storyType": ".ant-select-item-option"
+  "storyType": ".ant-select-item-option",
+  "storyToRead": ".card-text",
+  "storyName": ".mb-4",
+  "header": "//h3",
+  "text": "//h3/following-sibling::p"
 
 }
