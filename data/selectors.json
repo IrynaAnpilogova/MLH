@@ -3,15 +3,17 @@
   "name": "#name",
   "gender": ".ant-radio",
   "age": "#age",
+  "labelImg": "//label[contains(text(), '5. Upload an image (optional)')]",
   "ageSpinnerDown":".ant-input-number-handler-down",
   "ageSpinnerUp":".ant-input-number-handler-up",
-  "story": ".ant-select-selection-placeholder",
+  "story": ".ant-select-selector",
   "create": ".ant-btn",
   "storyClick": ".ant-select-show-arrow",
   "storyType": ".ant-select-item-option",
   "storyToRead": ".card-text",
   "storyName": ".mb-4",
   "header": "//h3",
-  "text": "//h3/following-sibling::p"
+  "text": "//h3/following-sibling::p",
+  "tryAgain": ".btn-primary"
 
 }

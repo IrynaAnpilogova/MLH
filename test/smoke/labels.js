@@ -60,33 +60,38 @@ describe('My Little Hero', function () { //define suite title by passing a strin
 
         });
 
+        it('TC-010 Label for picture  = 5. Upload an image (optional)', function () {
+            const text = $(sel.labelImg).getText('title');
+            expect(text).toEqual(exp.labelImage);
+
+        });
+
     });
 
     describe('The =header and text under the header are present and correct ', function () {
 
 
-        it('TC-010 The header is present', function () {
+        it('TC-011 The header is present', function () {
             const header = $(sel.header).isDisplayed();
             expect(header).toEqual(true);
         });
 
-        it('TC-011 The header is correct = My Little Hero', function () {
+        it('TC-012 The header is correct = My Little Hero', function () {
             const text = $(sel.header).getText();
             expect(text).toEqual(exp.header);
         });
-        it('TC-012 The text under header is present', function () {
+        it('TC-013 The text under header is present', function () {
             const header = $(sel.text).isDisplayed();
             expect(header).toEqual(true);
         });
 
-        it('TC-013 The text is correct = Let\'s create your own HERO! It\'s super easy with our application!', function () {
+        it('TC-014 The text is correct = Let\'s create your own HERO! It\'s super easy with our application!', function () {
             const text = $(sel.text).getText();
             expect(text).toEqual(exp.text);
         });
 
 
     });
-
 
 
 });

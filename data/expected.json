@@ -3,6 +3,7 @@
   "labelGender": "2. Please choose a gender.",
   "genderChoice": "ant-radio ant-radio-checked",
   "labelAge": "3. How old is your Hero?",
+  "labelImage": "5. Upload an image (optional)",
   "ageChoice":"ant-input-number ant-input-number-focused",
   "labelStory": "4. What type of story would you like to read?",
   "placeholderName": "Hero's name",

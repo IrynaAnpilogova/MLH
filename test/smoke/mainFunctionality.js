@@ -1,5 +1,7 @@
 const sel = require('../../data/selectors.json');
 const exp = require('../../data/expected.json');
+const data = require('../../data/testData.json');
+const inputValues4 = require ('../../helpers/inputValues4.js');
 
 describe('Checking the main functionality', function () {
 
@@ -76,7 +78,7 @@ describe('Checking the main functionality', function () {
         it('TC-035 After input age spinner Down is present ', function () {
             browser.url('');
             const clickAge = $(sel.age).click();
-            // browser.pause(1000);
+            browser.pause(3000);
             const label = $(sel.ageSpinnerDown).isDisplayed();
             expect(label).toEqual(true);
 
@@ -179,52 +181,56 @@ describe('Checking the main functionality', function () {
 
         it('TC-048 Create button is clickable after 1-4 are filled in', function () {
             browser.url('');
-            const inputName = $(sel.name).setValue("LadyBug");
-            const inputGender = $$(sel.gender)[1].click();
-            const inputAge = $(sel.age).setValue(123);
-            const click = $(sel.storyClick).click();
-            const inputStory = $$(sel.storyType)[6].click();
+            inputValues4(data.name, data.gender.she, data.age, data.storyType);
             const create = $(sel.create).isEnabled();
-            browser.pause(3000);
             expect(create).toEqual(true);
         });
 
-        it('TC-049 After submit button is clicked the story is present on the same page', function () {
+        it('TC-049 gender he is working', function () {
             browser.url('');
-            const inputName = $(sel.name).setValue("LadyBug");
-            const inputGender = $$(sel.gender)[1].click();
-            const inputAge = $(sel.age).setValue(123);
-            const click = $(sel.storyClick).click();
-            const inputStory = $$(sel.storyType)[6].click();
+            inputValues4(data.name, data.gender.he, data.age, data.storyType);
             $(sel.create).click();
-            browser.pause(3000);
-            const text = $(sel.storyToRead).isDisplayed()
-            expect(text).toEqual(true);
+            const btn = $(sel.tryAgain).isDisplayed();
+            expect(btn).toEqual(true);
         });
 
 
-    });
+            it('TC-050 After submit button is clicked the story is present on the same page', function () {
+                browser.url('');
+                const inputName = $(sel.name).setValue("LadyBug");
+                const inputGender = $$(sel.gender)[data.gender.she].click();
+                const inputAge = $(sel.age).setValue(123);
+                const click = $(sel.storyClick).click();
+                const inputStory = $$(sel.storyType)[data.storyType].click();
+                $(sel.create).click();
+                browser.pause(3000);
+                const text = $(sel.storyToRead).isDisplayed()
+                expect(text).toEqual(true);
+            });
 
 
-    describe('Story to read', function () {
-
-
-        it('TC-050 The Hero\'s name in the name of the story is the same Name' , function () {
-            browser.url('');
-            const inputName = $(sel.name).setValue("Anna");
-            const name = $(sel.name).getValue();
-            const inputGender = $$(sel.gender)[1].click();
-            const inputAge = $(sel.age).setValue(125);
-            const click = $(sel.storyClick).click();
-            const inputStory = $$(sel.storyType)[6].click();
-            $(sel.create).click();
-            browser.pause(3000);
-            const story =$(sel.storyToRead).getText();
-            const text = story.includes(name);
-            expect(text).toEqual(true);
         });
-    });
 
+
+        describe('Story to read', function () {
+
+
+            it('TC-051 The Hero\'s name in the name of the story is the same Name' , function () {
+                browser.url('');
+                const inputName = $(sel.name).setValue("Anna");
+                const name = $(sel.name).getValue();
+                const inputGender = $$(sel.gender)[1].click();
+                const inputAge = $(sel.age).setValue(125);
+                const click = $(sel.storyClick).click();
+                const inputStory = $$(sel.storyType)[6].click();
+                $(sel.create).click();
+                browser.pause(3000);
+                const story =$(sel.storyToRead).getText();
+                const text = story.includes(name);
+                expect(text).toEqual(true);
+            });
+    });
 
 
 });
+
