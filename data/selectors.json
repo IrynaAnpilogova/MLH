@@ -15,6 +15,9 @@
   "header": "//h3",
   "text": "//h3/following-sibling::p",
   "tryAgain": ".btn-primary",
-  "error": ".ant-form-item-explain"
+  "error": ".ant-form-item-explain",
+  "fileInput": ".ant-upload",
+  "fileInputPlaceholder": "//span[@class='ant-upload']/div/div",
+  "uploadedImage": ".error__pic"
 
 }
