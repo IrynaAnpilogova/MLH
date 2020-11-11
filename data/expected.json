@@ -22,6 +22,7 @@
   "story4": "Rags and Riches",
   "story5": "Tragedy",
   "story6": "Comedy",
-  "fileInputPlaceholder": "drag and drop your image here or browse"
+  "fileInputPlaceholder": "drag and drop your image here or browse",
+  "arrayOfAgeWords": ["one", "two", "three", "three", "three", "four", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "twenty-eight", "nineteen", "twenty", "fifty", "one hundred", "one hundred fifty-two", "seven hundred thirty-seven", "one thousand", "one thousand five hundred forty-two", "ten thousand", "fourteen thousand six hundred thirty-one", "one hundred thousand"]
 
 }

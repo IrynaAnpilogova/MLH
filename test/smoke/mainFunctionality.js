@@ -1,8 +1,10 @@
 const sel = require('../../data/selectors.json');
 const exp = require('../../data/expected.json');
 const data = require('../../data/testData.json');
+const findTextAge= require ('../../helpers/findTextAge.js');
 const inputValues3 = require ('../../helpers/inputValues3.js');
 const inputValues4 = require ('../../helpers/inputValues4.js');
+const arrayOfNumbers = require ('../../helpers/arrayOfAgeWords.js');
 const checkUpperCase = require ('../../helpers/checkUpperCase.js');
 const inputValues5Create = require('../../helpers/inputValues5Create.js');
 const inputValues5CreatePNG = require('../../helpers/inputValues5CreatePNG.js');
@@ -302,7 +304,20 @@ describe('Checking the main functionality', function () {
                 browser.url('');
                 inputValues5Create(data.name, data.gender.she, data.age, data.storyType.Comedy);
                 const location = $(sel.uploadedImage).getLocation();
-                expect(location).toEqual("1");
+                const xy = "674";
+                expect(location).toEqual(xy);
+            });
+
+
+            it('TC-168 Verify that the age is shown in words', function () {
+                browser.url('');
+                for (let i = 0; i < data.checkAge.length; i++) {
+                    inputValues5Create(data.name, data.gender.she, data.checkAge[i], data.storyType.Comedy);
+                    let textAge = findTextAge();
+                    expect(textAge).toEqual(exp.arrayOfAgeWords[i]);
+                    $('sel.tryAgain').click();
+                }
+
             });
 
 
